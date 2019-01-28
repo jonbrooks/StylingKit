@@ -1,8 +1,0 @@
-#! /bin/sh
-
-set -e
-set -x
-
-
-carthage build --no-skip-current
-

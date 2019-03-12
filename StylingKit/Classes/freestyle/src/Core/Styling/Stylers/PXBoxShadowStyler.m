@@ -23,6 +23,7 @@
 //
 
 #import "PXBoxShadowStyler.h"
+#import <sys/utsname.h>
 
 @implementation PXBoxShadowStyler
 
@@ -48,8 +49,18 @@
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
+        
+        //disabilito le ombre su dispositivi inferiori ad iPhone5S
+        NSString *cssSelector = @"box-shadow";
+        struct utsname systemInfo;
+        uname(&systemInfo);
+        NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+        if ([code compare:@"iPhone5"] == NSOrderedAscending) {
+            cssSelector = @"old-box-shadow";
+        }
+        
         handlers = @{
-            @"box-shadow" : ^(PXDeclaration *declaration, PXStylerContext *context) {
+            cssSelector : ^(PXDeclaration *declaration, PXStylerContext *context) {
                 context.shadow = declaration.shadowValue;
             }
         };

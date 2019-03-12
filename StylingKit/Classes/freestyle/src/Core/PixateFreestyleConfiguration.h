@@ -67,6 +67,9 @@ typedef enum {
  */
 @property (nonatomic) PXStylingMode styleMode;
 
+@property (nonatomic) NSString *currentClasses;
+@property (nonatomic) NSString *currentId;
+
 /**
  *  Determine where parse errors will be emitted
  */

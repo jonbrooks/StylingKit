@@ -29,6 +29,9 @@
 
 @property (nonatomic) PXStylingMode styleMode UI_APPEARANCE_SELECTOR;
 
+@property (nonatomic) NSString *currentId;
+@property (nonatomic) NSString *currentClasses;
+
 // Container for the pxStyleElementName used by base classes
 @property (nonatomic, readwrite, copy) NSString *styleElementName;
 

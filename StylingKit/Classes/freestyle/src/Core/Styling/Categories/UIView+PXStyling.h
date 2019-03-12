@@ -55,6 +55,9 @@
 @property (nonatomic, copy) IBInspectable NSString *styleCSS;
 @property (nonatomic) PXStylingMode styleMode UI_APPEARANCE_SELECTOR;
 
+@property (nonatomic) NSString *currentClasses;
+@property (nonatomic) NSString *currentId;
+
 - (void)addStyleClass:(NSString *)styleClass;
 - (void)removeStyleClass:(NSString *)styleClass;
 - (void)styleClassed:(NSString *)styleClass enabled:(bool)enabled;

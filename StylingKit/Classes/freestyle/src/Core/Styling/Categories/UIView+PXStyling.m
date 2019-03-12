@@ -51,6 +51,8 @@ static const char STYLE_ID_KEY;
 static const char STYLE_CHANGEABLE_KEY;
 static const char STYLE_CSS_KEY;
 static const char STYLE_MODE_KEY;
+static const char STYLE_CURRENT_CLASSES_KEY;
+static const char STYLE_CURRENT_ID_KEY;
 static const char KVC_DICTIONARY;
 static const char KVC_SET;
 
@@ -317,6 +319,18 @@ static NSMutableArray *DYNAMIC_SUBCLASSES;
     return id;
 }
 
+- (NSString *)currentId
+{
+    NSString *id = objc_getAssociatedObject(self, &STYLE_CURRENT_ID_KEY);
+    return id;
+}
+
+- (NSString *)currentClasses
+{
+    NSString *id = objc_getAssociatedObject(self, &STYLE_CURRENT_CLASSES_KEY);
+    return id;
+}
+
 - (BOOL)styleChangeable
 {
     return [objc_getAssociatedObject(self, &STYLE_CHANGEABLE_KEY) boolValue];
@@ -417,6 +431,16 @@ static NSMutableArray *DYNAMIC_SUBCLASSES;
 //    [[PXStyleController sharedInstance] setViewNeedsStyle:self];
 }
 
+- (void)setCurrentClasses:(NSString *)classes
+{
+    objc_setAssociatedObject(self, &STYLE_CURRENT_CLASSES_KEY, classes, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setCurrentId:(NSString *)Id
+{
+    objc_setAssociatedObject(self, &STYLE_CURRENT_ID_KEY, Id, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 - (void)setStyleChangeable:(BOOL)changeable
 {
     objc_setAssociatedObject(self, &STYLE_CHANGEABLE_KEY, @(changeable), OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -499,13 +523,38 @@ static NSMutableArray *DYNAMIC_SUBCLASSES;
 
 #pragma mark - Methods
 
+- (bool)needUpdateStyles {
+    
+    NSString* testStyleId = self.styleId != nil ? self.styleId : @"";
+    NSString* testCurrentId = self.currentId != nil ? self.currentId : @"-";
+    NSString* testStyleClasses = self.styleClasses != nil ? [[self.styleClasses allObjects] componentsJoinedByString:@" "] : @"";
+    NSString* testCurrentClasses = self.currentClasses != nil ? self.currentClasses : @"-";
+    
+    if ([testStyleId isEqualToString:testCurrentId] && [testStyleClasses isEqualToString:testCurrentClasses]) {
+        return false;
+    }
+    
+    self.currentId = testStyleId;
+    self.currentClasses = testStyleClasses;
+    
+    return true;
+}
+
 - (void)updateStyles
 {
+    if (![self needUpdateStyles]) {
+        return;
+    }
+    
     [UIView updateStyles:self recursively:YES];
 }
 
 - (void)updateStylesNonRecursively
 {
+    if (![self needUpdateStyles]) {
+        return;
+    }
+    
     [UIView updateStyles:self recursively:NO];
 }
 

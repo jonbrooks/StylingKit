@@ -71,6 +71,9 @@ typedef NS_ENUM(unsigned int, PXStylingMode)
  */
 @property (nonatomic) PXStylingMode styleMode;
 
+@property (nonatomic) NSString *currentClasses;
+@property (nonatomic) NSString *currentId;
+
 /**
  *  The element name to use when matching this styleable object against a selector
  */

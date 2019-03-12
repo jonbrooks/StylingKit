@@ -39,6 +39,8 @@
 @synthesize styleCSS;
 @synthesize styleChangeable;
 @synthesize styleMode = _styleMode;
+@synthesize currentId = _currentId;
+@synthesize currentClasses = _currentClasses;
 @synthesize pxStyleElementName = _name;
 @synthesize pxStyleParent = _parent;
 @synthesize bounds = _bounds;

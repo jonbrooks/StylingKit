@@ -31,6 +31,7 @@
 #import "PXShadowPaint.h"
 #import "PXShadowGroup.h"
 #import <QuartzCore/QuartzCore.h>
+#import <sys/utsname.h>
 
 @implementation PXBarShadowStyler
 
@@ -40,18 +41,35 @@
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
+        
+        //disabilito le ombre su dispositivi iPhone5
+        NSString *cssShadowSelector = @"shadow";
+        NSString *cssShadowSizeSelector = @"shadow-size";
+        NSString *cssShadowInsetSelector = @"shadow-inset";
+        NSString *cssShadowPaddingSelector = @"shadow-padding";
+        struct utsname systemInfo;
+        uname(&systemInfo);
+        NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+        if ([code rangeOfString:@"iPhone5"].location != NSNotFound) {
+            cssShadowSelector = @"old-shadow";
+            cssShadowSizeSelector = @"old-shadow-size";
+            cssShadowInsetSelector = @"old-shadow-inset";
+            cssShadowPaddingSelector = @"old-shadow-padding";
+        }
+        
+        
         handlers = @{
-            @"shadow" : ^(PXDeclaration *declaration, PXStylerContext *context) {
+            cssShadowSelector : ^(PXDeclaration *declaration, PXStylerContext *context) {
                 context.shadowUrl = declaration.URLValue;
             },
-            @"shadow-size" : ^(PXDeclaration *declaration, PXStylerContext *context) {
+            cssShadowSizeSelector : ^(PXDeclaration *declaration, PXStylerContext *context) {
                 CGSize size = declaration.sizeValue;
                 context.shadowBounds = CGRectMake(0.0f, 0.0f, size.width, size.height);
             },
-            @"shadow-inset": ^(PXDeclaration *declaration, PXStylerContext *context) {
+            cssShadowInsetSelector : ^(PXDeclaration *declaration, PXStylerContext *context) {
                 context.shadowInsets = declaration.insetsValue;
             },
-            @"shadow-padding" : ^(PXDeclaration *declaration, PXStylerContext *context) {
+            cssShadowPaddingSelector : ^(PXDeclaration *declaration, PXStylerContext *context) {
                 context.shadowPadding = declaration.floatValue;
             },
         };

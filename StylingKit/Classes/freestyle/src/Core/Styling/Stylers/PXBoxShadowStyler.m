@@ -50,12 +50,12 @@
 
     dispatch_once(&onceToken, ^{
         
-        //disabilito le ombre su dispositivi inferiori ad iPhone5S
+        //disabilito le ombre su dispositivi iPhone5
         NSString *cssSelector = @"box-shadow";
         struct utsname systemInfo;
         uname(&systemInfo);
         NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
-        if ([code compare:@"iPhone5"] == NSOrderedAscending) {
+        if ([code rangeOfString:@"iPhone5"].location != NSNotFound) {
             cssSelector = @"old-box-shadow";
         }
         

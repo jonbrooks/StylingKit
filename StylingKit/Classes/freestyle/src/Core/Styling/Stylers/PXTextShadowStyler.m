@@ -23,6 +23,7 @@
 //
 
 #import "PXTextShadowStyler.h"
+#import <sys/utsname.h>
 
 @implementation PXTextShadowStyler
 
@@ -48,8 +49,18 @@
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
+        
+        //disabilito le ombre su dispositivi iPhone5
+        NSString *cssSelector = @"text-shadow";
+        struct utsname systemInfo;
+        uname(&systemInfo);
+        NSString* code = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+        if ([code rangeOfString:@"iPhone5"].location != NSNotFound) {
+            cssSelector = @"old-text-shadow";
+        }
+        
         handlers = @{
-            @"text-shadow" : ^(PXDeclaration *declaration, PXStylerContext *context) {
+            cssSelector : ^(PXDeclaration *declaration, PXStylerContext *context) {
                 context.textShadow = declaration.shadowValue;
             }
         };

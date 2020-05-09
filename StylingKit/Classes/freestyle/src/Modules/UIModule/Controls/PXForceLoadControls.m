@@ -54,7 +54,6 @@
 #import "PXUITextView.h"
 #import "PXUIToolbar.h"
 #import "PXUIView.h"
-#import "PXUIWebView.h"
 #import "PXUIWindow.h"
 #import "STK_UIAlertControllerView.h"
 
@@ -92,7 +91,6 @@
     [PXUITextView class];
     [PXUIToolbar class];
     [PXUIView class];
-    [PXUIWebView class];
     [PXUIWindow class];
     [STK_UIAlertControllerView class];
 }

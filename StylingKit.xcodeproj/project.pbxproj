@@ -320,7 +320,6 @@
 		956797B220AEE108005D9AD2 /* PXUIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9567961720AEE108005D9AD2 /* PXUIActivityIndicatorView.m */; };
 		956797B320AEE108005D9AD2 /* PXUICollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567961820AEE108005D9AD2 /* PXUICollectionView.h */; };
 		956797B420AEE108005D9AD2 /* PXUISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567961920AEE108005D9AD2 /* PXUISwitch.h */; };
-		956797B520AEE108005D9AD2 /* PXUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9567961A20AEE108005D9AD2 /* PXUIWebView.m */; };
 		956797B620AEE108005D9AD2 /* PXUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9567961B20AEE108005D9AD2 /* PXUIView.m */; };
 		956797B720AEE108005D9AD2 /* PXUIActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9567961C20AEE108005D9AD2 /* PXUIActionSheet.m */; };
 		956797B820AEE108005D9AD2 /* PXForceLoadControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 9567961D20AEE108005D9AD2 /* PXForceLoadControls.m */; };
@@ -382,7 +381,6 @@
 		956797F020AEE108005D9AD2 /* PXUIActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567965720AEE108005D9AD2 /* PXUIActionSheet.h */; };
 		956797F120AEE108005D9AD2 /* PXForceLoadControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567965820AEE108005D9AD2 /* PXForceLoadControls.h */; };
 		956797F220AEE108005D9AD2 /* PXUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567965920AEE108005D9AD2 /* PXUIView.h */; };
-		956797F320AEE108005D9AD2 /* PXUIWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567965A20AEE108005D9AD2 /* PXUIWebView.h */; };
 		956797F420AEE108005D9AD2 /* PXUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9567965B20AEE108005D9AD2 /* PXUISwitch.m */; };
 		956797F520AEE108005D9AD2 /* PXUIPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567965C20AEE108005D9AD2 /* PXUIPageControl.h */; };
 		956797F620AEE108005D9AD2 /* PXUITableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9567965D20AEE108005D9AD2 /* PXUITableViewCell.h */; };
@@ -753,7 +751,6 @@
 		9567961720AEE108005D9AD2 /* PXUIActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUIActivityIndicatorView.m; sourceTree = "<group>"; };
 		9567961820AEE108005D9AD2 /* PXUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUICollectionView.h; sourceTree = "<group>"; };
 		9567961920AEE108005D9AD2 /* PXUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUISwitch.h; sourceTree = "<group>"; };
-		9567961A20AEE108005D9AD2 /* PXUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUIWebView.m; sourceTree = "<group>"; };
 		9567961B20AEE108005D9AD2 /* PXUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUIView.m; sourceTree = "<group>"; };
 		9567961C20AEE108005D9AD2 /* PXUIActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUIActionSheet.m; sourceTree = "<group>"; };
 		9567961D20AEE108005D9AD2 /* PXForceLoadControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXForceLoadControls.m; sourceTree = "<group>"; };
@@ -815,7 +812,6 @@
 		9567965720AEE108005D9AD2 /* PXUIActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUIActionSheet.h; sourceTree = "<group>"; };
 		9567965820AEE108005D9AD2 /* PXForceLoadControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXForceLoadControls.h; sourceTree = "<group>"; };
 		9567965920AEE108005D9AD2 /* PXUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUIView.h; sourceTree = "<group>"; };
-		9567965A20AEE108005D9AD2 /* PXUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUIWebView.h; sourceTree = "<group>"; };
 		9567965B20AEE108005D9AD2 /* PXUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXUISwitch.m; sourceTree = "<group>"; };
 		9567965C20AEE108005D9AD2 /* PXUIPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUIPageControl.h; sourceTree = "<group>"; };
 		9567965D20AEE108005D9AD2 /* PXUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXUITableViewCell.h; sourceTree = "<group>"; };
@@ -1544,7 +1540,6 @@
 				9567961720AEE108005D9AD2 /* PXUIActivityIndicatorView.m */,
 				9567961820AEE108005D9AD2 /* PXUICollectionView.h */,
 				9567961920AEE108005D9AD2 /* PXUISwitch.h */,
-				9567961A20AEE108005D9AD2 /* PXUIWebView.m */,
 				9567961B20AEE108005D9AD2 /* PXUIView.m */,
 				9567961C20AEE108005D9AD2 /* PXUIActionSheet.m */,
 				9567961D20AEE108005D9AD2 /* PXForceLoadControls.m */,
@@ -1588,7 +1583,6 @@
 				9567965720AEE108005D9AD2 /* PXUIActionSheet.h */,
 				9567965820AEE108005D9AD2 /* PXForceLoadControls.h */,
 				9567965920AEE108005D9AD2 /* PXUIView.h */,
-				9567965A20AEE108005D9AD2 /* PXUIWebView.h */,
 				9567965B20AEE108005D9AD2 /* PXUISwitch.m */,
 				9567965C20AEE108005D9AD2 /* PXUIPageControl.h */,
 				9567965D20AEE108005D9AD2 /* PXUITableViewCell.h */,
@@ -1715,7 +1709,6 @@
 				956797DF20AEE108005D9AD2 /* PXVirtualStyleableControl.h in Headers */,
 				9567975120AEE108005D9AD2 /* PXStylesheetParser.h in Headers */,
 				956797E820AEE108005D9AD2 /* UIBarItem+PXStyling.h in Headers */,
-				956797F320AEE108005D9AD2 /* PXUIWebView.h in Headers */,
 				9567971B20AEE108005D9AD2 /* PXStylerContext.h in Headers */,
 				956796CE20AEE108005D9AD2 /* PXStroke.h in Headers */,
 				956797A220AEE108005D9AD2 /* PXNotificationManager.h in Headers */,
@@ -2112,7 +2105,6 @@
 				9567974A20AEE108005D9AD2 /* PXStylesheetLexer.m in Sources */,
 				956796E020AEE108005D9AD2 /* PXRuleSet.m in Sources */,
 				956796AF20AEE108005D9AD2 /* PXArrowRectangle.m in Sources */,
-				956797B520AEE108005D9AD2 /* PXUIWebView.m in Sources */,
 				956797A320AEE108005D9AD2 /* PXWeakWrapper.m in Sources */,
 				9567977420AEE108005D9AD2 /* PXClassSelector.m in Sources */,
 				9567980D20AEE108005D9AD2 /* PXUIProgressView.m in Sources */,
